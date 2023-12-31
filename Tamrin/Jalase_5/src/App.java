@@ -7,6 +7,14 @@ public class App {
         System.out.println(student.getGrade());
         student.setGrade(11);
         System.out.println(student.getGrade());
+
+        Animal jack = new Animal("Jack", 10);
+        System.out.println(jack);
+        jack.walk();
+        Dog jack_2 = new Dog("Jack", 10);
+        System.out.println(jack_2);
+        jack_2.walk();
+        jack_2.bark();
     }
 }
 
@@ -46,5 +54,39 @@ class Student {
     }
     public void setStudentId(int studentId) {
         this.studentId = studentId;
+    }
+}
+
+class Animal {
+    private String name;
+    private int age;
+
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void walk() {
+        System.out.println("Walking...");
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + this.name + " Age: " + this.age;
+    }
+}
+
+class Dog extends Animal {
+    public Dog(String name, int age) {
+        super(name, age);
+    }
+
+    public void bark() {
+        System.out.println("Bark...");
+    }
+
+    @Override
+    public String toString() {
+        return "Type: Dog " + super.toString();
     }
 }
