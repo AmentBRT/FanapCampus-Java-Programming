@@ -15,6 +15,10 @@ public class App {
         System.out.println(jack_2);
         jack_2.walk();
         jack_2.bark();
+
+        Bird jason = new Bird("Jason", 14);
+        System.out.println(jason);
+        jason.sound();
     }
 }
 
@@ -88,5 +92,15 @@ class Dog extends Animal {
     @Override
     public String toString() {
         return "Type: Dog " + super.toString();
+    }
+}
+
+class Bird extends Animal {
+    public Bird(String name, int age) {
+        super(name, age);
+    }
+
+    public void sound() {
+        System.out.println("Make a sound...");
     }
 }
