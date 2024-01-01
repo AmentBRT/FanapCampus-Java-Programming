@@ -13,17 +13,17 @@ public abstract class BankAccount {
 
     public void deposit(int amount) {
         if (0 < amount) {
-            this.balance += amount;
+            balance += amount;
         }
     }
 
     public void withdraw(int amount) {
-        if (0 < amount && amount <= this.balance) {
-            this.balance -= amount;
+        if (0 < amount && amount <= balance) {
+            balance -= amount;
         }
     }
 
     public int getBalance() {
-        return this.balance;
+        return balance;
     }
 }
