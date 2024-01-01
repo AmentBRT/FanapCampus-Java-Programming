@@ -9,14 +9,14 @@ public class BasicAccount extends BankAccount {
 
     @Override
     public void deposit(int amount) {
-        if (0 < amount && amount < TRANSACTION_LIMIT) {
+        if (amount < TRANSACTION_LIMIT) {
             super.deposit(amount);
         }
     }
 
     @Override
     public void withdraw(int amount) {
-        if (0 < amount && amount < TRANSACTION_LIMIT) {
+        if (amount < TRANSACTION_LIMIT) {
             super.withdraw(amount);
         }
     }
