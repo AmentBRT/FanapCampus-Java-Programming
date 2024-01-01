@@ -7,7 +7,7 @@ public class PremiumAccount extends BasicAccount {
         PremiumAccount.transactionLimit = 1000;
     }
 
-    private static final double INTEREST_RATE = 5.00;
+    protected static double interestRate = 5.00;
 
     private static final int INIT_VALUE = 10;
     private static int currencyValue = INIT_VALUE;
@@ -24,7 +24,7 @@ public class PremiumAccount extends BasicAccount {
     @Override
     public void deposit(int amount) {
         super.deposit(amount);
-        super.deposit((int) (amount * INTEREST_RATE / 100));
+        super.deposit((int) (amount * interestRate / 100));
     }
 
 
@@ -47,7 +47,8 @@ public class PremiumAccount extends BasicAccount {
     public void sellCurrency(int count) {
         if (currencyCount >= count) {
             currencyCount -= count;
-            deposit(getCurrencyCost(count));
+            int cost = getCurrencyCost(count);
+            deposit(cost);
         }
     }
 
