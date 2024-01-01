@@ -1,8 +1,8 @@
 package org.example.bank_account;
 
-public class BankAccount {
-    private int accountNumber;
-    private String ownerName;
+public abstract class BankAccount {
+    public int accountNumber;
+    public String ownerName;
     private int balance;
 
     BankAccount(int accountNumber, String ownerName, int balance) {
@@ -22,6 +22,6 @@ public class BankAccount {
     }
 
     public int getBalance() {
-        return balance;
+        return this.balance;
     }
 }
